@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= titulo %></title>
+
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>Agenda</h1>
+
+        <div class="row g-3 mt-2">
+            <div class="col">
+                <input type="text" id="nombre" class="form-control" placeholder="Ingrese Nombre">
+            </div>
+            <div class="col">
+                <input type="text" id="numero" class="form-control" placeholder="Ingrese Número de Teléfono">
+            </div>
+            <div class="col">
+                <button id="btn_agregar" class="form-control">Agregar</button>
+            </div>
+          </div>
+
+        <hr>
+   
+        <table class="table table-hover">
+            <thead>
+                <th>Nombre</th>
+                <th>Número</th>
+            </thead>
+            <tbody>
+                <% contactos.forEach(contacto=>{ %>
+                    <tr>
+                        <td><%= contacto.nombre_contacto %></td>
+                        <td><%= contacto.numero_contacto %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+        
+
+    </div>
+    
+        
+
+<script src="funciones.js"></script>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
